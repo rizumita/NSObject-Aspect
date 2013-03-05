@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		6A9F449616E382CB006D7A40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9F449516E382CB006D7A40 /* Foundation.framework */; };
-		6A9F449B16E382CB006D7A40 /* NSObject_Aspect.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6A9F449A16E382CB006D7A40 /* NSObject_Aspect.h */; };
-		6A9F449D16E382CB006D7A40 /* NSObject_Aspect.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F449C16E382CB006D7A40 /* NSObject_Aspect.m */; };
 		6A9F44A516E382CB006D7A40 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9F44A416E382CB006D7A40 /* SenTestingKit.framework */; };
 		6A9F44A716E382CB006D7A40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9F44A616E382CB006D7A40 /* UIKit.framework */; };
 		6A9F44A816E382CB006D7A40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9F449516E382CB006D7A40 /* Foundation.framework */; };
 		6A9F44AB16E382CB006D7A40 /* libNSObject+Aspect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9F449216E382CB006D7A40 /* libNSObject+Aspect.a */; };
 		6A9F44B116E382CB006D7A40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A9F44AF16E382CB006D7A40 /* InfoPlist.strings */; };
 		6A9F44B416E382CB006D7A40 /* NSObject_AspectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F44B316E382CB006D7A40 /* NSObject_AspectTests.m */; };
+		6A9F44C316E383B2006D7A40 /* NSObject+Aspect.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F44C216E383B2006D7A40 /* NSObject+Aspect.m */; };
+		6A9F44C416E383B2006D7A40 /* NSObject+Aspect.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F44C216E383B2006D7A40 /* NSObject+Aspect.m */; };
+		CB876D0E594D9E95AEFD7A80 /* Counter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB876865BDA9799B673AD404 /* Counter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,6 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				6A9F449B16E382CB006D7A40 /* NSObject_Aspect.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,8 +45,6 @@
 		6A9F449216E382CB006D7A40 /* libNSObject+Aspect.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNSObject+Aspect.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9F449516E382CB006D7A40 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6A9F449916E382CB006D7A40 /* NSObject+Aspect-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Aspect-Prefix.pch"; sourceTree = "<group>"; };
-		6A9F449A16E382CB006D7A40 /* NSObject_Aspect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObject_Aspect.h; sourceTree = "<group>"; };
-		6A9F449C16E382CB006D7A40 /* NSObject_Aspect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSObject_Aspect.m; sourceTree = "<group>"; };
 		6A9F44A316E382CB006D7A40 /* NSObject+AspectTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NSObject+AspectTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9F44A416E382CB006D7A40 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		6A9F44A616E382CB006D7A40 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -54,6 +52,10 @@
 		6A9F44B016E382CB006D7A40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A9F44B216E382CB006D7A40 /* NSObject_AspectTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObject_AspectTests.h; sourceTree = "<group>"; };
 		6A9F44B316E382CB006D7A40 /* NSObject_AspectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSObject_AspectTests.m; sourceTree = "<group>"; };
+		6A9F44C116E383B2006D7A40 /* NSObject+Aspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Aspect.h"; sourceTree = "<group>"; };
+		6A9F44C216E383B2006D7A40 /* NSObject+Aspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Aspect.m"; sourceTree = "<group>"; };
+		CB87673E2FA884DECAD33EAF /* Counter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Counter.h; sourceTree = "<group>"; };
+		CB876865BDA9799B673AD404 /* Counter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Counter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +113,9 @@
 		6A9F449716E382CB006D7A40 /* NSObject+Aspect */ = {
 			isa = PBXGroup;
 			children = (
-				6A9F449A16E382CB006D7A40 /* NSObject_Aspect.h */,
-				6A9F449C16E382CB006D7A40 /* NSObject_Aspect.m */,
 				6A9F449816E382CB006D7A40 /* Supporting Files */,
+				6A9F44C116E383B2006D7A40 /* NSObject+Aspect.h */,
+				6A9F44C216E383B2006D7A40 /* NSObject+Aspect.m */,
 			);
 			path = "NSObject+Aspect";
 			sourceTree = "<group>";
@@ -132,6 +134,8 @@
 				6A9F44B216E382CB006D7A40 /* NSObject_AspectTests.h */,
 				6A9F44B316E382CB006D7A40 /* NSObject_AspectTests.m */,
 				6A9F44AD16E382CB006D7A40 /* Supporting Files */,
+				CB876865BDA9799B673AD404 /* Counter.m */,
+				CB87673E2FA884DECAD33EAF /* Counter.h */,
 			);
 			path = "NSObject+AspectTests";
 			sourceTree = "<group>";
@@ -243,7 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A9F449D16E382CB006D7A40 /* NSObject_Aspect.m in Sources */,
+				6A9F44C316E383B2006D7A40 /* NSObject+Aspect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +256,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A9F44B416E382CB006D7A40 /* NSObject_AspectTests.m in Sources */,
+				6A9F44C416E383B2006D7A40 /* NSObject+Aspect.m in Sources */,
+				CB876D0E594D9E95AEFD7A80 /* Counter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

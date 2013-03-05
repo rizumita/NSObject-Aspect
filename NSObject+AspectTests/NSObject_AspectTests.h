@@ -2,7 +2,7 @@
 //  NSObject_AspectTests.h
 //  NSObject+AspectTests
 //
-//  Created by 和泉田 領一 on 2013/03/03.
+//  Created by Ryoichi Izumita on 2013/03/03.
 //  Copyright (c) 2013年 Ryoichi Izumita. All rights reserved.
 //
 
