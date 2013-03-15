@@ -147,7 +147,7 @@ void *aspect_perform_method(id target, SEL selector, va_list list) {
             SEL storedSelector = sel_registerName([aspect_stored_method_name(selector) UTF8String]);
             class_addMethod([self class], storedSelector, imp, method_getTypeEncoding(originalMethod));
 
-            SEL beforeSelector = sel_registerName([aspect_before_block_name(selector) UTF8String]);
+            SEL beforeSelector = sel_registerName([aspect_after_block_name(selector) UTF8String]);
             class_addMethod([self class], beforeSelector, imp_implementationWithBlock(block), method_getTypeEncoding(originalMethod));
 
             method_setImplementation(originalMethod, (IMP)aspect_perform_methods);
