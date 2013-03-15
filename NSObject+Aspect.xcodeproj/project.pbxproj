@@ -54,6 +54,7 @@
 		6A9F44B316E382CB006D7A40 /* NSObject_AspectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSObject_AspectTests.m; sourceTree = "<group>"; };
 		6A9F44C116E383B2006D7A40 /* NSObject+Aspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Aspect.h"; sourceTree = "<group>"; };
 		6A9F44C216E383B2006D7A40 /* NSObject+Aspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Aspect.m"; sourceTree = "<group>"; };
+		6AA54FE516F35B2A003150AF /* NSObject+Aspect.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "NSObject+Aspect.podspec"; sourceTree = SOURCE_ROOT; };
 		CB87673E2FA884DECAD33EAF /* Counter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Counter.h; sourceTree = "<group>"; };
 		CB876865BDA9799B673AD404 /* Counter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Counter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +114,7 @@
 		6A9F449716E382CB006D7A40 /* NSObject+Aspect */ = {
 			isa = PBXGroup;
 			children = (
+				6AA54FE516F35B2A003150AF /* NSObject+Aspect.podspec */,
 				6A9F449816E382CB006D7A40 /* Supporting Files */,
 				6A9F44C116E383B2006D7A40 /* NSObject+Aspect.h */,
 				6A9F44C216E383B2006D7A40 /* NSObject+Aspect.m */,
@@ -307,7 +309,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -330,7 +332,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -409,6 +411,7 @@
 				6A9F44B916E382CB006D7A40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6A9F44BA16E382CB006D7A40 /* Build configuration list for PBXNativeTarget "NSObject+AspectTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +420,7 @@
 				6A9F44BC16E382CB006D7A40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

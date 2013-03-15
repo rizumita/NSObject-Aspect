@@ -61,7 +61,6 @@ void *aspect_perform_method(id target, SEL selector, va_list list) {
     Method method = class_getInstanceMethod([target class], selector);
     if (!method) return result;
 
-    const char *type = method_getTypeEncoding(method);
     NSMethodSignature *signature = [NSMethodSignature signatureWithObjCTypes:method_getTypeEncoding(method)];
 
     if (!signature) {
@@ -113,7 +112,7 @@ void *aspect_perform_method(id target, SEL selector, va_list list) {
         if (originalMethod) {
             IMP imp = method_getImplementation(originalMethod);
             SEL storedSelector = sel_registerName([aspect_stored_method_name(selector) UTF8String]);
-            BOOL success = class_addMethod([self class], storedSelector, imp, method_getTypeEncoding(originalMethod));
+            class_addMethod([self class], storedSelector, imp, method_getTypeEncoding(originalMethod));
 
             SEL beforeSelector = sel_registerName([aspect_before_block_name(selector) UTF8String]);
             class_addMethod([self class], beforeSelector, imp_implementationWithBlock(block), method_getTypeEncoding(originalMethod));
@@ -164,7 +163,6 @@ void *aspect_perform_method(id target, SEL selector, va_list list) {
 
     if (method) {
         method_setImplementation(method, imp_implementationWithBlock(^(id obj, ...) { }));
-//        class_replaceMethod([self class], NSSelectorFromString(aspect_before_block_name(selector)), imp_implementationWithBlock(^(id obj, ...) { }), method_getTypeEncoding(beforeMethod));
     }
 }
 
@@ -173,7 +171,6 @@ void *aspect_perform_method(id target, SEL selector, va_list list) {
 
     if (method) {
         method_setImplementation(method, imp_implementationWithBlock(^(id obj, ...) { }));
-//        class_replaceMethod([self class], NSSelectorFromString(aspect_after_block_name(selector)), imp_implementationWithBlock(^(id obj, ...) { }), method_getTypeEncoding(method));
     }
 }
 
