@@ -17,7 +17,7 @@ NSString *aspect_stored_method_name(SEL selector);
 
 void *aspect_perform_methods(id target, SEL selector, ...);
 
-void *aspect_perform_method(id target, SEL selector, va_list args);
+void *aspect_perform_method(id target, SEL selector, va_list *args);
 
 NSString *aspect_before_block_name(SEL selector) {
     return [NSString stringWithFormat:@"__aspect_before_%@", NSStringFromSelector(selector)];
@@ -37,25 +37,25 @@ void *aspect_perform_methods(id target, SEL selector, ...) {
     va_start(list, selector);
     NSString *beforeName = aspect_before_block_name(selector);
     SEL beforeSelector = NSSelectorFromString(beforeName);
-    aspect_perform_method(target, beforeSelector, list);
+    aspect_perform_method(target, beforeSelector, &list);
     va_end(list);
 
     va_start(list, selector);
     NSString *originalName = aspect_stored_method_name(selector);
     SEL originalSelector = NSSelectorFromString(originalName);
     va_end(list);
-    void *result = aspect_perform_method(target, originalSelector, list);
+    void *result = aspect_perform_method(target, originalSelector, &list);
 
     va_start(list, selector);
     NSString *afterName = aspect_after_block_name(selector);
     SEL afterSelector = NSSelectorFromString(afterName);
-    aspect_perform_method(target, afterSelector, list);
+    aspect_perform_method(target, afterSelector, &list);
     va_end(list);
 
     return result;
 }
 
-void *aspect_perform_method(id target, SEL selector, va_list list) {
+void *aspect_perform_method(id target, SEL selector, va_list *list) {
     void *result = NULL;
 
     Method method = class_getInstanceMethod([target class], selector);
@@ -72,11 +72,21 @@ void *aspect_perform_method(id target, SEL selector, va_list list) {
     invocation.selector = selector;
 
     // Set arguments if needed
-    unsigned int num = method_getNumberOfArguments(method);
-    for (int index = 2; index < num; index++) {
-        void *arg = va_arg(list, void *);
-        if (!arg) continue;
-        [invocation setArgument:&arg atIndex:index];
+    for (int index = 2; index < [signature numberOfArguments]; index++) {
+        const char *type = [signature getArgumentTypeAtIndex:(NSUInteger)index];
+        if (strcmp(type, "f") == 0) {
+            double doubleValue = va_arg(*list, typeof (
+            double));
+            float floatValue = (float)doubleValue;
+            [invocation setArgument:&floatValue atIndex:index];
+            *list += sizeof(double);
+        } else {
+            NSUInteger size;
+            NSGetSizeAndAlignment(type, &size, NULL);
+            NSUInteger actualSize = size >= 4 ? size : 4;
+            [invocation setArgument:*list atIndex:index];
+            *list += actualSize;
+        }
     }
 
     [invocation invoke];
