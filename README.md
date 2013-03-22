@@ -14,7 +14,7 @@ Sample
 NSString *aString=@"This is a text for sample.";
 NSString *substring = [aString substringToIndex:4];
 
-[Counter separateBeforeBlockFromSelector:@selector(substringToIndex:)];  // Remove before block
+[NSString separateBeforeBlockFromSelector:@selector(substringToIndex:)];  // Remove before block
 ```
 
 ```OBjective-C
@@ -25,7 +25,7 @@ NSString *substring = [aString substringToIndex:4];
 NSString *aString=@"This is a text for sample.";
 NSString *substring = [aString substringToIndex:4];
 
-[Counter separateAfterBlockFromSelector:@selector(substringToIndex:)];	// Remove after block
+[NSString separateAfterBlockFromSelector:@selector(substringToIndex:)];	// Remove after block
 ```
 
 License
